@@ -4,76 +4,71 @@
 <head>
     <link rel="icon" href="dsglogo/dsglogoku.png" />
     <title>Home</title>
+    <style>
+        body{
+            background: powderblue;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            border-top: 2px solid #d9d9d9;
+            border-bottom: 2px solid #d9d9d9;
+            background-color: white;
+        }
+
+        table{
+            background-color: white;
+        }
+        .logo{
+           padding: 15px 30px;
+        }
+        /* navigasi all page*/
+        nav{
+            background: powderblue;
+            height: 80px;
+            width: 100%;
+            align-items: center;
+            display: flex;
+        }
+        nav ul li{
+            display: inline-block;
+            line-height: 0px;
+            margin: 0 5px;
+        }
+        nav ul li a{
+            color: rgb(0, 0, 0);
+            font-size: 17px;
+            padding: 7px 13px;
+        }
+        a.active,a:hover{
+            background: rgb(255, 255, 255);
+            transition: .5s;
+        }
+    </style>
 </head>
-
-<body>
-    <hr />
-
+<body> 
+    <nav>
+        <div class="logo"><img src="assets/logo.jpg" alt=""/></div>
+        <ul>
+            <li><a class="active" href="Home.html">Dashboard</a></li>
+            <li><a href="Login.html">Log in</a></li>
+            <li><a href="Register.html">Register</a></li>
+            <li><a href="#">Log Out</a></li>
+        </ul>
+    </nav>
     <header style="text-align: center;">
         <div class="logo">
-            <img src="dsglogo/dsglogoku.png" alt="Logo RPL" width="200px" />
+            <img src="dsglogo/dsglogoku.png"width="200px" />
         </div>
-        <h1>Pure Pharmacy Medica Centre</h1>
+        <h1>Pure Pharmacy Medica Center</h1>
     </header>
-
-    <hr />
 
     <article style="text-align: center;">
         <p>Selamat datang pada Halaman utama Produk kami yaitu Prodak Obat-obatan</p>
         <p>kami bekerja dibagian Produksi dan manajemen Prodak dan barang Obat-obatan</p>
         </p>
     </article>
-
-    <div style="max-width: 600px; margin: 3em auto">
-        <table border="1" width="100%">
-            <thead>
-                <tr>
-                    <th>Nama Obat</th>
-                    <th>Kemasan</th>
-                    <th>Harga</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <ul>
-                            <li>Amoksisilin kapsul 250 mg</li>
-                            <li>Albendazol tablet/ tablet kunyah 400 mg</li>
-                            <li>Alopurinol tablet 100 mg</li>
-                            <li>Obat Batuk Hitam (O.B.H) cairan</li>
-                            <li>Parasetamol drops</li>
-                            <li>Parasetamol sirup 120 mg/5 ml</li>
-                            <li>Retinol (Vitamin A) 100.000 IU kapsul lunak</li>
-                            <li>Vitamin B kompleks tablet</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>2ktk 10 x 10 kapsul</li>
-                            <li>ktk 5 x 6 tablet</li>
-                            <li>ktk 10 x 10 tablet</li>
-                            <li>btl 100 ml</li>
-                            <li>btl 15 ml</li>
-                            <li>Parasetamol sirup 120 mg/5 ml</li>
-                            <li>btl 50 kapsul lunak</li>
-                            <li>btl 1000 tablet</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>38.000</li>
-                            <li>16.000</li>
-                            <li>16.000</li>
-                            <li>4.600</li>
-                            <li>171.000</li>
-                            <li>4.000</li>
-                            <li>29.000</li>
-                            <li>36.000</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
         <article style="text-align: center;">
         <p>Telitilah sebelum membeli obat! Apakah Kamu pernah mendengar himbauan tersebut? 
             Mungkin dalam bentuk iklan layanan masyarakat milik pemerintah maupun ketika berada di apotek. 
