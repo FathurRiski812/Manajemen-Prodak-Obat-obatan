@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="dsglogo/dsglogoku.png" />
+    <title>Home</title>
+    <style>
+        body{
+            background-color:rosybrown;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            border-top: 2px solid #d9d9d9;
+            border-bottom: 2px solid #d9d9d9;
+            background-color: white;
+        }
+
+        table{
+            background-color: white;
+        }
+        .logo{
+           padding: 15px 30px;
+        }
+        /* navigasi all page*/
+        nav{
+            background-color:rosybrown;
+            height: 80px;
+            width: 100%;
+            align-items: center;
+            display: flex;
+        }
+        nav ul li{
+            display: inline-block;
+            line-height: 0px;
+            margin: 0 5px;
+        }
+        nav ul li a{
+            color: rgb(0, 0, 0);
+            font-size: 17px;
+            padding: 7px 13px;
+        }
+        a.active,a:hover{
+            background: rgb(255, 255, 255);
+            transition: .5s;
+        }
+        * {box-sizing: border-box}
+            body {font-family: Verdana, sans-serif; margin:0}
+            .mySlides {display: none}
+            img {vertical-align: middle;}
+
+            /* Slideshow container */
+            .slideshow-container {
+            max-width: 700px;
+            position: relative;
+            margin: auto;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+            }
+
+            /* Caption text */
+            .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+            background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+            }
+
+            @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+            }
+                </style>
+            </head>
+            <body> 
+        <nav>
+        <div class="logo"><img src="assets/logo.jpg" alt=""/></div>
+        <ul>
+            <li><a class="active" href="INDEX.html">Dashboard</a></li>
+            <li><a href="Login.html">Log in</a></li>
+            <li><a href="Register.html">Register</a></li>
+            <li><a href="#">Log Out</a></li>
+        </ul>
+    </nav>
+    <header style="text-align: center;">
+        <div class="logo">
+            <img src="dsglogo/dsglogoku.png"width="200px" />
+        </div>
+        <h1>Pure Pharmacy Medica Center</h1>
+    </header>
+    <body>
+
+        <div class="slideshow-container">
+        
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="obat1.jpg" style="width:100%">
+          <div class="text">Caption Text</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="obat2.jpg" style="width:100%">
+          <div class="text">Caption Two</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="obat3.jpg" style="width:100%">
+          <div class="text">Caption Three</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="obat4.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+          </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>  
+        </div>
+        
+        <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script>
+        
+        </body>
+    <article style="text-align: center;">
+        <p>Selamat datang pada Halaman utama Produk kami yaitu Prodak Obat-obatan</p>
+        <p>kami bekerja dibagian Produksi dan manajemen Prodak dan barang Obat-obatan</p>
+        </p>
+    </article>
+        <article style="text-align: center;">
+        <p>Telitilah sebelum membeli obat! Apakah Kamu pernah mendengar himbauan tersebut? 
+            Mungkin dalam bentuk iklan layanan masyarakat milik pemerintah maupun ketika berada di apotek. 
+            Namun, sebenarnya pesan yang disampaikan memang benar. Baik sakit ringan apalagi berat, 
+            sebaiknya kita perlu lebih teliti dan kritis sebelum membeli obat. 
+            Jangan sampai sakit yang diderita semakin parah akibat salah membeli obat.</p>
+    </div>
+    <hr>
+</body>
+</html>
