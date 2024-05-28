@@ -1,75 +1,58 @@
-<?php
-session_start();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    if ($username == "contoh" && $password == "contoh") {
-        $_SESSION["username"] = $username;
-
-        header("Location: Home.php");
-        exit();
-    } else {
-        $error = "Username atau password salah.";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="icon" href="dsglogo/dsglogoku.png" />
-		<title>Login</title>
-		<style>
-			form{
-				border-radius: 10px;
-				background: rgb(240, 233, 233);
-				padding: 2rem;
-				border: 1px solid black;
-				width: 200px ;
-				height: 180px;
-				margin: 20px
-			}
-			header{
-            border-top: 2px solid #d9d9d9;
-            border-bottom: 2px solid #d9d9d9;
-            background-color: white;
-        }
-		body{
-			background-color:rosybrown;
-            background-color:rosybrown;
-            margin: 0;
-            padding: 0;
-		}
-		button{
-			margin: 10px;
-		}
-		
-		</style>
-	</head>
-	<body>
-	<center>
-		<header>
-		   <nav>
-			<div class="logo">
-			  <img src="dsglogo/dsglogoku.png" alt="Logo RPL" width="200px" />
+<head>
+  <title>Login</title>
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@500;700&display=swap"
+			rel="stylesheet"
+		/>
+  <link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+     <header>
+	  <nav>
+	    <div class="logo">
+		 <!-- <label>PURE PHARMACY MEDICA CENTRE</label> -->
+	    </div>
+	    <input type="checkbox" id="click" />
+	    <label for="click" class="menu-btn">
+	       <i class="fas fa-bars"></i>
+	    </label>
+	    <ul>
+		<li><a href="index.php">Home</a></li>
+		<li><a href="login.php" class="btn_login">Login</a></li>
+		<li><a href="register.php" class="btn_register">Register</a></li>
+	    </ul>
+        </nav>
+	</header>
+	<main>
+	  <div class="center">
+	    <div class="form-login">
+			<div>
+				<img src="dsglogo/PPMC.png" alt="" style="height : 125px; widht : 125px; margin-top :10px;"/>
 			</div>
-		   </nav>
-		</header>
-		<main>
-            <div class="container">
-                  <form>
-					<h1>Login</h1>
-                      <label>Username</label><br>
-                      <input type="text"><br>
-                      <label>Password</label><br>
-                      <input type="password"><br>
-					  <button>Log in</button>
-                    </form>
-				<a href="register.php"> <br>Register Disini</a>
-		    </div>
-		</main>
-	</center>
-	</body>
+		 <h3>Login</h3>
+		 <form action="login-proses.php" method="post">
+		   <input class="input" type="text" name="username"
+			    placeholder="Username" />
+	         <input class="input" type="password" name="password"
+			    placeholder="Password" />
+		   <button type="submit" class="btn_login" name="login"  
+                      id="login"> Login
+		   </button>
+		 </form>
+		 <a href="register.php" class="link-register">
+                  Register Disini</a>
+	    </div>
+	  </div>
+	</main>
+   </div>
+</body>
 </html>
