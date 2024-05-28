@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    if ($username == "contoh" && $password == "contoh") {
+        $_SESSION["username"] = $username;
+
+        header("Location: Home.php");
+        exit();
+    } else {
+        $error = "Username atau password salah.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -19,8 +37,8 @@
             background-color: white;
         }
 		body{
-			background-color: powderblue;
-            background: powderblue;
+			background-color:rosybrown;
+            background-color:rosybrown;
             margin: 0;
             padding: 0;
 		}
@@ -49,7 +67,7 @@
                       <input type="password"><br>
 					  <button>Log in</button>
                     </form>
-				<a href="register.html"> <br>Register Disini</a>
+				<a href="register.php"> <br>Register Disini</a>
 		    </div>
 		</main>
 	</center>
