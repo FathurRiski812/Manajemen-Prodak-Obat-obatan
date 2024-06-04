@@ -18,6 +18,14 @@
 			<div class="sidebar-button">
 				<h3>Harga Barang</h3>
 			</div>
+         <div class="profile-details" style="background-color: none !important; border: none; background: none;">
+				<button type="button" class="btn btn-tambah">
+					<a href="harga-entry.php">Tambah Data</a>
+				</button>
+            <button type="button" class="btn btn-tambah">
+					<a href="harga-cetak.php">Cetak</a>
+				</button>
+			</div>
 		</nav>
       <div class="home-content">
          <h3>Harga Barang</h3>
@@ -25,25 +33,45 @@
             <thead>
                <tr>
                   <th>Tanggal</th>
-                  <th>Barang</th>
                   <th>Harga</th>
-                  <th>Status</th>
+                  <th>Aksi</th>
                   <!-- <th>Action</th> -->
                </tr>
             </thead>
             <tbody>
-               <tr>
-                  <td>08-11-2024</td>
-                  <td>Amoxilin</td>
-                  <td>450000</td>
-                  <td><p class="success">Success</p></td>
-                  <!-- <td>
-                     <button class="btn_detail" onclick="showDetails('8-11-2024', 'Amoxilin', '450000', 'Success')">Detail</button>
-                  </td> -->
-               </tr>
-               <!-- Add more rows as needed -->
-            </tbody>
-         </table>
+					<?php
+					include '../koneksi.php';
+					$sql = "SELECT * FROM tb_harga";
+					$result = mysqli_query($koneksi, $sql);
+					if (mysqli_num_rows($result) == 0) {
+						echo "
+			   <tr>
+				<td colspan='5' align='center'>
+                           Data Kosong
+                        </td>
+			   </tr>
+				";
+					}
+					while ($data = mysqli_fetch_assoc($result)) {
+						
+						echo "
+                    <tr>
+                      <td>".$data['tanggal']."</td>
+                      <td>{$data['harga']}</td>
+                      <td >
+                        <a class='btn-edit' href=harga-edit.php?id=$data[id]>
+                               Edit
+                        </a> | 
+                        <a class='btn-delete' href=harga-hapus.php?id=$data[id]>
+                            Hapus
+                        </a>
+                      </td>
+                    </tr>
+                  ";
+					}
+					?>
+				</tbody>
+			</table>
       </div>
    </section>
    <script>

@@ -38,6 +38,30 @@
    </h2>
    <h3 id="date"></h3>
 </div>
+<?php
+					include 'koneksi.php';
+					$sql = "SELECT * FROM tb_harga";
+					$result = mysqli_query($koneksi, $sql);
+					$simpan = mysqli_num_rows($result);
+					if ($simpan == 0) {
+						echo "
+						<tr>
+							<td colspan='5' align='center'>
+									Data Kosong
+									</td>
+						</tr>";
+					}
+					else{
+						echo "
+						<div class='center'>
+						<div class='form-login'>
+					    Terdapat ".$simpan." Inputan data pada Tabel Harga
+						</div>
+						</div>
+						";
+
+					}
+					?>
  
    </section>
    <script>
@@ -93,5 +117,6 @@
 			myFunction();
 		};
 	</script>
+	
 </body>
 </html>
